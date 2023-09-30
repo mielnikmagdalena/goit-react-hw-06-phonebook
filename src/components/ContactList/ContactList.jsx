@@ -2,16 +2,17 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/contactsActions';
 import PropTypes from 'prop-types';
+import { nanoid } from 'nanoid'; // Importuj nanoid
 import styles from './ContactList.module.css';
 
 const ContactList = () => {
-  const { contacts } = useSelector(state => state.contacts);
+  const { contacts } = useSelector(state => state);
   const dispatch = useDispatch();
 
   return (
     <ul className={styles.list}>
       {contacts.map(contact => (
-        <li key={contact.id} className={styles.item}>
+        <li key={nanoid()} className={styles.item}>
           {contact.name}: {contact.number}
           <button
             className={styles.button}

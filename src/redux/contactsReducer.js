@@ -6,12 +6,10 @@ const initialState = [];
 const contactsReducer = createReducer(initialState, builder => {
   builder
     .addCase(addContact, (state, action) => {
-      state.contacts.push(action.payload);
+      state.push(action.payload);
     })
     .addCase(deleteContact, (state, action) => {
-      state.contacts = state.contacts.filter(
-        contact => contact.id !== action.payload
-      );
+      return state.filter(contact => contact.id !== action.payload);
     });
 });
 
