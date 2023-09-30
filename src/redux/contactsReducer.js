@@ -1,9 +1,7 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { addContact, deleteContact } from './contactsActions';
 
-const initialState = {
-  contacts: [],
-};
+const initialState = [];
 
 const contactsReducer = createReducer(initialState, builder => {
   builder

@@ -1,14 +1,9 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { setFilter } from './filterActions'; // Importuj akcje związaną z filtrowaniem
 
-const initialState = {
-  filter: '',
-};
-
-const filterReducer = createReducer(initialState, builder => {
+const filterReducer = createReducer('', builder => {
   builder.addCase(setFilter, (state, action) => {
-    state.filter = action.payload;
+    return action.payload;
   });
 });
-
 export default filterReducer;

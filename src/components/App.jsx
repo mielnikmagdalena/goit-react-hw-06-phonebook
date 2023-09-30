@@ -8,8 +8,8 @@ import Filter from './Filter/Filter.jsx';
 import styles from './App.module.css';
 
 export const App = () => {
-  const contacts = useSelector(state => state.contacts.contacts);
-  const filter = useSelector(state => state.contacts.filter);
+  const contacts = useSelector(state => state.contacts);
+  const filter = useSelector(state => state.filter || '');
   const dispatch = useDispatch();
 
   const handleAddContact = newContact => {
