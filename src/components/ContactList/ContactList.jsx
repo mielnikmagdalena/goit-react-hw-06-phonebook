@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import styles from './ContactList.module.css';
 
 const ContactList = () => {
-  const contacts = useSelector(state => state.contacts);
+  const { contacts } = useSelector(state => state.contacts);
   const dispatch = useDispatch();
 
   return (
