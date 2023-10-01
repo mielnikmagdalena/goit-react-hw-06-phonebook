@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/contactsActions';
-import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid'; // Importuj nanoid
 import styles from './ContactList.module.css';
 

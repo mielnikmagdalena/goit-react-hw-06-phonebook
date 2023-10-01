@@ -4,7 +4,7 @@ import styles from './Filter.module.css';
 import { useDispatch } from 'react-redux';
 import { setFilter } from '../../redux/filterActions';
 
-const Filter = ({ filter }) => {
+const Filter = () => {
   const dispatch = useDispatch();
 
   const handleChange = event => {
