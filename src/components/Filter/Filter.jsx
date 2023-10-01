@@ -16,8 +16,6 @@ const Filter = ({ filter }) => {
     <input
       className={styles.input}
       type="text"
-      name="filter"
-      value={filter}
       onChange={handleChange}
       placeholder="Search contacts"
     />

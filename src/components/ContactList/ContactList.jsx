@@ -6,12 +6,19 @@ import { nanoid } from 'nanoid'; // Importuj nanoid
 import styles from './ContactList.module.css';
 
 const ContactList = () => {
-  const { contacts } = useSelector(state => state);
+  const { contacts, filter } = useSelector(state => state);
   const dispatch = useDispatch();
+  const getFilteredContacts = () => {
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(filter.toLowerCase())
+    );
+  };
+
+  const filteredContacts = getFilteredContacts();
 
   return (
     <ul className={styles.list}>
-      {contacts.map(contact => (
+      {filteredContacts.map(contact => (
         <li key={nanoid()} className={styles.item}>
           {contact.name}: {contact.number}
           <button
@@ -24,10 +31,6 @@ const ContactList = () => {
       ))}
     </ul>
   );
-};
-
-ContactList.propTypes = {
-  onDeleteContact: PropTypes.func.isRequired,
 };
 
 export default ContactList;
